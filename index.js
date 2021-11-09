@@ -1,4 +1,4 @@
-class PromiseSimple {
+class MyPromise {
   constructor(executionFunction) {
     this.promiseChain = [];
     this.handleError = () => {};
@@ -62,7 +62,7 @@ fakeApiCall = () => {
 };
 
 const makeApiCall = () => {
-  return new PromiseSimple((resolve, reject) => {
+  return new MyPromise((resolve, reject) => {
     setTimeout(() => {
       const apiResponse = fakeApiCall();
       if (apiResponse.statusCode >= 400) {
