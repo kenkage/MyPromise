@@ -37,7 +37,7 @@ class PromiseSimple {
   }
 }
 
-fakeApiBackend = () => {
+fakeApiCall = () => {
   const user = {
     username: 'kenkage',
     favoriteNumber: 42,
@@ -64,7 +64,7 @@ fakeApiBackend = () => {
 const makeApiCall = () => {
   return new PromiseSimple((resolve, reject) => {
     setTimeout(() => {
-      const apiResponse = fakeApiBackend();
+      const apiResponse = fakeApiCall();
       if (apiResponse.statusCode >= 400) {
         reject(apiResponse);
       } else {
